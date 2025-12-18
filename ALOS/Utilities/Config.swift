@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct ALOSConfig {
+struct WebRTCConfig {
     // Backend configuration
     static let BACKEND_IP = "192.168.1.100" // Change to your desktop IP
     static let BACKEND_PORT = 8000
@@ -31,4 +31,3 @@ struct ALOSConfig {
     static let TURN_USERNAME = "alos"
     static let TURN_PASSWORD = "alos_free_password"
 }
-

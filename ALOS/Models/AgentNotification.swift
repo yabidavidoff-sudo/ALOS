@@ -2,27 +2,20 @@
 //  AgentNotification.swift
 //  ALOS
 //
-//  Created by yabi davidoff on 2025-12-17.
-//
-
-
-//
-//  AgentNotification.swift
-//  ALOS
-//
 
 import Foundation
 
-struct AgentNotification: Codable {
-    let agent: String
-    let message: String
-    let priority: Bool
+struct AgentNotification: Identifiable {
+    let id = UUID()
     let timestamp: Date
-    let notificationType: NotificationType
+    let agent: Agent
+    let message: String
+    let priority: Int
     
-    enum NotificationType: String, Codable {
-        case voice
-        case alert
-        case approval
+    init(timestamp: Date = Date(), agent: Agent = .friday, message: String, priority: Int = 0) {
+        self.timestamp = timestamp
+        self.agent = agent
+        self.message = message
+        self.priority = priority
     }
 }
